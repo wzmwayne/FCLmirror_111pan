@@ -1,49 +1,18 @@
-# FCL Release Sync
+# 声明
 
-这个仓库包含一个GitHub工作流，用于自动同步FoldCraftLauncher的最新发布版到WebDAV存储。
+因学业原因，本人暂时放缓各项目的更新，学业告一段落后继续。
 
-## 工作流功能
+- 账号下的仓库目前设为**归档（只读）**，推送与合并请求会暂停处理；
+- 暂停期间页面与功能不保证更新速度，恢复后照常维护；
+- 原有说明文档已移至 `_readme.md`，内容保持不变。
 
-- 每6小时自动检查FoldCraftLauncher的最新发布版
-- 支持手动触发同步
-- 自动下载Linux AppImage和Windows exe版本
-- 将文件上传到WebDAV存储
-- 保存发布说明到文件
+## 为什么关注 keepandroidopen.org
 
-## 设置步骤
+安卓正在从「开放安装」走向受控分发：侧载限制、开发者验证、平台签名垄断，
+会直接压缩个人开发者与普通用户的空间。这与项目是否更新无关，值得持续关注。
 
-### 1. 配置GitHub Secrets
+<https://keepandroidopen.org>
 
-在仓库的 `Settings` → `Secrets and variables` → `Actions` 中添加以下密钥：
+## 许可
 
-- `WEBDAV_USERNAME`: WebDAV用户名 (wzmwayne@hotmail.com)
-- `WEBDAV_PASSWORD`: WebDAV密码 (从GitHub仓库的"密钥"部分获取)
-- `WEBDAV_URL`: WebDAV地址 (https://v3.111pan.cn/dav)
-
-### 2. 工作流位置
-
-工作流文件位于 `.github/workflows/fcl-release-sync.yml`
-
-### 3. WebDAV结构
-
-上传后的文件结构：
-```
-https://v3.111pan.cn/dav/
-├── FoldCraftLauncher-vX.X.X.AppImage
-├── FoldCraftLauncher-vX.X.X.exe
-├── release_notes_vX.X.X.md
-└── [版本号]/
-    ├── FoldCraftLauncher-vX.X.X.AppImage
-    ├── FoldCraftLauncher-vX.X.X.exe
-    └── release_notes_vX.X.X.md
-```
-
-## 手动触发
-
-可以在GitHub Actions页面手动触发工作流运行。
-
-## 注意事项
-
-- 工作流会自动清理下载的临时文件
-- 支持多种平台的发布版本
-- 会保留所有历史版本的文件
+放弃所有权利（Unlicense / 公有领域），可自由取用、修改与再分发。
